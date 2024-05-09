@@ -24,7 +24,12 @@ namespace ReactApplication.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Sale>>> GetSales()
         {
-            return await _context.Sales.ToListAsync();
+            return await _context.Sales
+                .Include(s => s.Customer)
+                .Include(s => s.Product)
+                .Include(s => s.Store)
+                .ToListAsync();
+
         }
 
         // GET: api/Sales/5

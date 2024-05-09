@@ -1,13 +1,9 @@
 import { React, useState } from "react";
 import axios from "axios";
-import {Link, useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Addstore() {
     const [inputData, setInputData] = useState({ name: "", address: "" })
-
-
-
-    const navigat = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();

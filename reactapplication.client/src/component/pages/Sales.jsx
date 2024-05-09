@@ -11,7 +11,6 @@ const Sales = () => {
 
     const loadSales = async () => {
         const result = await axios.get("http://localhost:5049/api/Sales");
-        console.log(result);
         setSales(result.data);
 
 
@@ -40,9 +39,9 @@ const Sales = () => {
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">CustomerId</th>
-                        <th scope="col">ProductId</th>
-                        <th scope="col">StoreId</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Store</th>
                         <th scope="col">DateSold</th>
                         <th scope="col">Actions</th>
                         <th scope="col">Actions</th>
@@ -54,9 +53,9 @@ const Sales = () => {
                     {sales.map((sale, index) => (
                         <tr key={sale.id}>
                             <th scope="row">{index + 1}</th>
-                            <td>{sale.customerId}</td>
-                            <td>{sale.productId}</td>
-                            <td>{sale.storeId}</td>
+                            <td>{sale.customer.name}</td>
+                            <td>{sale.product.name}</td>
+                            <td>{sale.store.name}</td>
                             <td>{sale.dateSold}</td>
 
                             <td>

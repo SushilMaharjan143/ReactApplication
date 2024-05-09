@@ -16,6 +16,7 @@ public partial class Customer
     [Required]
     [MaxLength(50)]
     public string Address { get; set; } = null!;
+    
 
 
 
